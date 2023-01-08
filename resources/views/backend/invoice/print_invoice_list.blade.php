@@ -35,7 +35,7 @@
                             <th>Customer Name</th> 
                             <th>Invoice No </th>
                             <th>Date </th>
-                            <th>Desctipion</th>  
+                            <th>Description</th>  
                             <th>Amount</th>
                              <th>Action</th>
                             
@@ -45,16 +45,32 @@
                         <tbody>
                         	 
                         	@foreach($allData as $key => $item)
+                            
             <tr>
                 <td> {{ $key+1}} </td>
+                @if (isset($item['payment']['customer']['name']))
                 <td> {{ $item['payment']['customer']['name'] }} </td> 
+
+                @else
+
+                <td> N/A </td>
+
+                @endif
                 <td> #{{ $item->invoice_no }} </td> 
                 <td> {{ date('d-m-Y',strtotime($item->date))  }} </td> 
                  
                   
                  <td>  {{ $item->description }} </td> 
 
-                <td>  $ {{ $item['payment']['total_amount'] }} </td>
+                 @if (isset($item['payment']['total_amount']))
+                 <td>  ₱ {{ $item['payment']['total_amount'] }} </td>
+                 @else
+
+                 <td> N/A </td>
+
+                 @endif
+
+
 
                 <td>
      <a href="{{ route('print.invoice',$item->id) }}" class="btn btn-danger sm" title="Print Invoice" >  <i class="fa fa-print"></i> </a>

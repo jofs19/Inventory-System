@@ -32,7 +32,8 @@
             <div class="invoice-title">
                 
                 <h3>
-                    <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="logo" height="24"/> Easy Shopping Mall
+                    <img src="{{ asset('backend/assets/images/Pangasinan_State_University_logo.webp
+                    ') }}" alt="logo" height="30"/> Pangasinan State University
                 </h3>
             </div>
             <hr>
@@ -40,9 +41,9 @@
             <div class="row">
                 <div class="col-6 mt-4">
                     <address>
-                        <strong>Easy Shopping Mall:</strong><br>
-                        Purana Palton Dhaka<br>
-                        support@easylearningbd.com
+                        <strong>Pangasinan State University LC:</strong><br>
+                        Alvear St., Poblacion, Lingayen, 2401 Pangasinan<br>
+                        lingayencampus@psu.edu.ph.com
                     </address>
                 </div>
                 <div class="col-6 mt-4 text-end">
@@ -89,7 +90,11 @@
         @foreach($allData as $key => $item)
         <tr>
         <td class="text-center"> {{ $key+1}} </td>
+        @if (isset($item['customer']['name']))
         <td class="text-center"> {{ $item['customer']['name'] }} </td> 
+        @else
+        <td> N/A </td>
+        @endif
         <td class="text-center"> #{{ $item['invoice']['invoice_no'] }}   </td> 
         <td class="text-center"> {{  date('d-m-Y',strtotime($item['invoice']['date'])) }} </td> 
         <td class="text-center"> {{ $item->due_amount }} </td> 
@@ -108,7 +113,7 @@
                 <td class="no-line"></td>
                 <td class="no-line text-center">
                     <strong>Grand Due Amount</strong></td>
-                <td class="no-line text-end"><h4 class="m-0">${{ $total_due}}</h4></td>
+                <td class="no-line text-end"><h4 class="m-0">₱ {{ $total_due}}</h4></td>
             </tr>
                             </tbody>
                         </table>

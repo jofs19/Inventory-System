@@ -32,7 +32,8 @@
             <div class="invoice-title">
                 <h4 class="float-end font-size-16"><strong>Invoice No # {{ $payment['invoice']['invoice_no'] }}</strong></h4>
                 <h3>
-                    <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="logo" height="24"/> Easy Shopping Mall
+                    <img src="{{ asset('backend/assets/images/Pangasinan_State_University_logo.webp
+                    ') }}" alt="logo" height="30"/> Pangasinan State University
                 </h3>
             </div>
             <hr>
@@ -40,9 +41,9 @@
             <div class="row">
                 <div class="col-6 mt-4">
                     <address>
-                        <strong>Easy Shopping Mall:</strong><br>
-                        Purana Palton Dhaka<br>
-                        support@easylearningbd.com
+                        <strong>Pangasinan State University LC:</strong><br>
+                        Alvear St., Poblacion, Lingayen, 2401 Pangasinan<br>
+                        lingayencampus@psu.edu.ph.com
                     </address>
                 </div>
                 <div class="col-6 mt-4 text-end">
@@ -200,7 +201,7 @@
                 <td class="no-line"></td>
                 <td class="no-line text-center">
                     <strong>Grand Amount</strong></td>
-                <td class="no-line text-end"><h4 class="m-0">${{ $payment->total_amount }}</h4></td>
+                <td class="no-line text-end"><h4 class="m-0">₱ {{ $payment->total_amount }}</h4></td>
             </tr>
 
 

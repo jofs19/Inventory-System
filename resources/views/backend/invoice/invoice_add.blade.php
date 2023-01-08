@@ -172,7 +172,7 @@
 
  <br>
             <div class="form-group">
-                <button type="submit" class="btn btn-info" id="storeButton"> Invoice Store</button>
+                <button type="submit" class="btn btn-info" id="storeButton">  Store Invoice </button>
                 
             </div>
             

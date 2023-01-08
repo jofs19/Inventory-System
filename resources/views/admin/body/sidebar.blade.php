@@ -1,8 +1,39 @@
+ 
+{{-- Identify which user was login --}}
+
+@php
+    $user = Auth::user();
+    $id = $user->id;
+    $adminData = App\Models\User::find($id);
+
+    $m_suppliers = $adminData->m_suppliers == 1;
+    $m_customers = $adminData->m_customers == 1;
+    $m_units = $adminData->m_units == 1;
+    $m_categories = $adminData->m_categories == 1;
+    $m_products = $adminData->m_products == 1;
+    $m_purchases = $adminData->m_purchases == 1;
+    $m_invoices = $adminData->m_invoices == 1;
+    $m_stocks = $adminData->m_stocks == 1;
+    $m_access = $adminData->m_access == 1;
+@endphp
+ 
+ 
  <div class="vertical-menu">
 
                 <div data-simplebar class="h-100">
 
                     <!-- User details -->
+
+                    <div class="user-profile text-center mt-3">
+                        <div class="">
+                            <img src="{{ asset('backend/assets/images/Pangasinan_State_University_logo.webp
+                            ') }}" alt="" class="avatar-md rounded-circle">
+                        </div>
+                        <div class="mt-3">
+                            <h4 class="font-size-16 mb-1">Pangasinan State University</h4>
+                            <span class="text-muted font-size-13">Inventory Management System</span>
+                        </div>
+                    </div>
                 
 
                     <!--- Sidemenu -->
@@ -18,7 +49,8 @@
                                 </a>
                             </li>
  
-                
+        @if ($m_suppliers)
+
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="ri-hotel-fill"></i>
@@ -30,7 +62,11 @@
             </ul>
         </li>
 
+        @else
+        @endif
 
+
+        @if ($m_customers)
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="ri-shield-user-fill"></i>
@@ -45,8 +81,15 @@
                
             </ul>
         </li>
+        @else
+            
+        @endif
 
 
+
+
+
+        @if ($m_units)
          <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="ri-delete-back-fill"></i>
@@ -69,7 +112,11 @@
             </ul>
         </li>
 
+        @else
+        @endif
 
+
+        @if ($m_products)
           <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="ri-reddit-fill"></i>
@@ -81,7 +128,11 @@
             </ul>
         </li>
 
+        @else
+        @endif
 
+
+        @if ($m_purchases)
           <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="ri-oil-fill"></i>
@@ -95,7 +146,11 @@
             </ul>
         </li>
 
+        @else
+        @endif
 
+
+        @if ($m_invoices)
           <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="ri-compass-2-fill"></i>
@@ -110,17 +165,23 @@
             </ul>
         </li>
 
+        @else
+        @endif
+
                              
 
 
 
 
 
-                            <li class="menu-title">Stock</li>
+                            <li class="menu-title">Others</li>
 
+    @if ($m_stocks)
+        
+    
     <li>
         <a href="javascript: void(0);" class="has-arrow waves-effect">
-            <i class="ri-gift-fill"></i>
+            <i class="ri-stack-fill"></i>
             <span>Manage Stock</span>
         </a>
         <ul class="sub-menu" aria-expanded="false">
@@ -130,7 +191,28 @@
         </ul>
     </li>
 
-                            <li>
+    @else
+    @endif
+
+
+    @if ($m_access)
+        
+    
+    <li>
+        <a href="javascript: void(0);" class="has-arrow waves-effect">
+            <i class="mdi mdi-account-key"></i>
+            <span>Admin Access Control</span>
+        </a>
+        <ul class="sub-menu" aria-expanded="false">
+            <li><a href="{{ route('admin.user.all') }}">Privilize Admin</a></li>
+
+        </ul>
+    </li>
+
+    @else
+    @endif
+
+                            {{-- <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <i class="ri-profile-line"></i>
                                     <span>Support</span>
@@ -143,7 +225,7 @@
                                     <li><a href="pages-404.html">Error 404</a></li>
                                     <li><a href="pages-500.html">Error 500</a></li>
                                 </ul>
-                            </li>
+                            </li> --}}
 
                            
 

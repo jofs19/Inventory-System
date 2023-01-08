@@ -53,7 +53,13 @@
         <tbody>
         <!-- foreach ($order->lineItems as $line) or some such thing here -->
         <tr>
+            @if (isset($payment['customer']['name']))
             <td> {{ $payment['customer']['name'] }}</td>
+
+            @else
+            <td> N/A </td>
+
+            @endif
             <td class="text-center">{{ $payment['customer']['mobile_no']  }}</td>
             <td class="text-center">{{ $payment['customer']['email']  }}</td>
              
@@ -179,7 +185,7 @@ $invoice_details = App\Models\InvoiceDetail::where('invoice_id',$payment->invoic
                 <td class="no-line"></td>
                 <td class="no-line text-center">
                     <strong>Grand Amount</strong></td>
-                <td class="no-line text-end"><h4 class="m-0">${{ $payment->total_amount }}</h4></td>
+                <td class="no-line text-end"><h4 class="m-0">₱ {{ $payment->total_amount }}</h4></td>
             </tr>
                             </tbody>
                         </table>

@@ -12,6 +12,7 @@ use App\Http\Controllers\Pos\PurchaseController;
 use App\Http\Controllers\Pos\DefaultController;
 use App\Http\Controllers\Pos\InvoiceController;
 use App\Http\Controllers\Pos\StockController;
+use App\Http\Controllers\AdminUserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -181,6 +182,20 @@ Route::controller(DefaultController::class)->group(function () {
     Route::get('/check-product', 'GetStock')->name('check-product-stock'); 
      
 });
+
+
+//AdminUserController routes
+
+Route::controller(AdminUserController::class)->group(function () {
+    Route::get('/admin/user/all', 'AllAdminRole')->name('admin.user.all'); 
+    Route::get('/admin/user/add', 'AddAdminRole')->name('admin.user.add');
+    Route::post('/admin/user/store', 'StoreAdminRole')->name('admin.user.store');
+    Route::get('/admin/user/edit/{id}', 'AdminUserEdit')->name('admin.user.edit');
+    Route::post('/admin/user/update', 'AdminUserUpdate')->name('admin.user.update');
+    Route::get('/admin/user/delete/{id}', 'AdminUserDelete')->name('admin.user.delete');
+     
+});
+
 
 
  
