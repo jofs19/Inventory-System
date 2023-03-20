@@ -9,7 +9,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0">Admin All</h4>
+                                    <h4 class="mb-sm-0">All User (Admin) </h4>
 
                                      
 
@@ -25,7 +25,7 @@
 
     <a href="{{ route('admin.user.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;"><i class="mdi mdi-account-plus"></i> Add Admin </a> <br>  <br>               
 
-                    <h4 class="card-title">Admin All Data </h4>
+                    <h4 class="card-title">All User's Data </h4>
                     
 
                     <table id="datatable" class="table text-center table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
@@ -35,7 +35,7 @@
                             <th>Name</th> 
                             <th>Username</th> 
 
-                            <th>Admin Image </th>
+                            <th>User's Image </th>
                             <th>Email</th>
                             <th>Phone</th> 
                             <th>Access</th> 
@@ -52,7 +52,12 @@
                             <td> {{ $key+1}} </td>
                             <td> {{ $item->name }} </td> 
                             <td> {{ $item->username }} </td>
+@if($item->id == 18)
+<td> <img  src="http://127.0.0.1:8000/upload/admin_images/202301100216download.png" style="width:60px; height:60px"> </td> 
+@else
+
            <td> <img src="{{ asset( $item->profile_image ) }}" style="width:60px; height:60px"> </td> 
+           @endif
                               <td> {{ $item->email }} </td> 
                                <td> {{ $item->phone }} </td> 
                             <td> 

@@ -2,11 +2,11 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-sm-6">
-                                 johnoliversantiago5@gmail.com
+                                lingayencampus@psu.edu.ph.com
                             </div>
                             <div class="col-sm-6">
                                 <div class="text-sm-end d-none d-sm-block">
-                                    Crafted by JOFS
+                                    Pangasinan State University, Lingayen Campus
                                 </div>
                             </div>
                         </div>

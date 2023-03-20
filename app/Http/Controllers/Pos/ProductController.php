@@ -8,7 +8,7 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\Supplier;
 use App\Models\Unit;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
   
 class ProductController extends Controller
@@ -39,6 +39,7 @@ class ProductController extends Controller
             'unit_id' => $request->unit_id,
             'category_id' => $request->category_id,
             'quantity' => '0',
+            'stock' => $request->stock,
             'created_by' => Auth::user()->id,
             'created_at' => Carbon::now(), 
         ]);
@@ -75,6 +76,8 @@ class ProductController extends Controller
             'supplier_id' => $request->supplier_id,
             'unit_id' => $request->unit_id,
             'category_id' => $request->category_id, 
+            'stock' => $request->stock,
+
             'updated_by' => Auth::user()->id,
             'updated_at' => Carbon::now(), 
         ]);

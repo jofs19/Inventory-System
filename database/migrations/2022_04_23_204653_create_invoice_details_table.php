@@ -24,6 +24,9 @@ return new class extends Migration
             $table->double('selling_price')->nullable();
             $table->tinyInteger('status')->default(1); 
             $table->timestamps();
+            $table->foreign('invoice_id')->references('id')->on('invoices')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     } 
 

@@ -53,11 +53,11 @@
 
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
-                <i class="ri-hotel-fill"></i>
-                <span>Manage Suppliers</span>
+                <i class="ri-shield-user-fill"></i>
+                <span>Manage Staff</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
-                <li><a href="{{ route('supplier.all') }}">All Supplier</a></li>
+                <li><a href="{{ route('supplier.all') }}">All Staffs</a></li>
                
             </ul>
         </li>
@@ -69,15 +69,15 @@
         @if ($m_customers)
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
-                <i class="ri-shield-user-fill"></i>
-                <span>Manage Customers</span>
+                <i class="ri-team-fill"></i>
+                <span>Manage Requestors</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
-                <li><a href="{{ route('customer.all') }}">All Customers</a></li>
-                 <li><a href="{{ route('credit.customer') }}">Credit Customers</a></li>
+                <li><a href="{{ route('customer.all') }}">All Requestors</a></li>
+                 <li><a href="{{ route('credit.customer') }}">Credit Requestors</a></li>
 
-                 <li><a href="{{ route('paid.customer') }}">Paid Customers</a></li>
-                  <li><a href="{{ route('customer.wise.report') }}">Customer Wise Report</a></li>
+                 <li><a href="{{ route('paid.customer') }}">Paid Requestors</a></li>
+                  <li><a href="{{ route('customer.wise.report') }}">Requestors Wise Report</a></li>
                
             </ul>
         </li>
@@ -92,11 +92,11 @@
         @if ($m_units)
          <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
-                <i class="ri-delete-back-fill"></i>
-                <span>Manage Units</span>
+                <i class="ri-building-fill"></i>
+                <span>Manage Offices</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
-                <li><a href="{{ route('unit.all') }}">All Unit</a></li>
+                <li><a href="{{ route('unit.all') }}">All Offices</a></li>
                
             </ul>
         </li>
@@ -107,7 +107,7 @@
                 <span>Manage Category</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
-                <li><a href="{{ route('category.all') }}">All Category</a></li>
+                <li><a href="{{ route('category.all') }}">All Categories</a></li>
                
             </ul>
         </li>
@@ -119,11 +119,11 @@
         @if ($m_products)
           <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
-                <i class="ri-reddit-fill"></i>
-                <span>Manage Product</span>
+                <i class="ri-reserved-fill"></i>
+                <span>Manage Items</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
-                <li><a href="{{ route('product.all') }}">All Product</a></li>
+                <li><a href="{{ route('product.all') }}">All Items</a></li>
                
             </ul>
         </li>
@@ -140,7 +140,7 @@
             </a>
             <ul class="sub-menu" aria-expanded="false">
                 <li><a href="{{ route('purchase.all') }}">All Purchase</a></li>
-                <li><a href="{{ route('purchase.pending') }}">Approval Purchase</a></li>
+                <li><a href="{{ route('purchase.pending') }}">Purchase Approval</a></li>
                 <li><a href="{{ route('daily.purchase.report') }}">Daily Purchase Report</a></li>
                
             </ul>
@@ -158,7 +158,7 @@
             </a>
             <ul class="sub-menu" aria-expanded="false">
                 <li><a href="{{ route('invoice.all') }}">All Invoice</a></li>
-                <li><a href="{{ route('invoice.pending.list') }}">Approval Invoice</a></li>
+                <li><a href="{{ route('invoice.pending.list') }}">Invoice Approval</a></li>
                 <li><a href="{{ route('print.invoice.list') }}">Print Invoice List</a></li>
                   <li><a href="{{ route('daily.invoice.report') }}">Daily Invoice Report</a></li>
                
@@ -174,7 +174,6 @@
 
 
 
-                            <li class="menu-title">Others</li>
 
     @if ($m_stocks)
         
@@ -185,14 +184,16 @@
             <span>Manage Stock</span>
         </a>
         <ul class="sub-menu" aria-expanded="false">
-            <li><a href="{{ route('stock.report') }}">Stock Report</a></li>
-            <li><a href="{{ route('stock.supplier.wise') }}">Supplier / Product Wise </a></li>
+            <li><a href="{{ route('stock.report') }}">Requestor Stock Report</a></li>
+            {{-- <li><a href="{{ route('stock.supplier.wise') }}">Staff / Product Wise </a></li> --}}
             
         </ul>
     </li>
 
     @else
     @endif
+
+    <li class="menu-title">Others</li>
 
 
     @if ($m_access)
@@ -201,10 +202,10 @@
     <li>
         <a href="javascript: void(0);" class="has-arrow waves-effect">
             <i class="mdi mdi-account-key"></i>
-            <span>Admin Access Control</span>
+            <span>User Access Control</span>
         </a>
         <ul class="sub-menu" aria-expanded="false">
-            <li><a href="{{ route('admin.user.all') }}">Privilize Admin</a></li>
+            <li><a href="{{ route('admin.user.all') }}">Privilize User (Admin)</a></li>
 
         </ul>
     </li>

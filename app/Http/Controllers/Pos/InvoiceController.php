@@ -9,7 +9,7 @@ use App\Models\Supplier;
 use App\Models\Product;
 use App\Models\Unit;
 use App\Models\Category;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
 
 use App\Models\Invoice;
@@ -17,7 +17,7 @@ use App\Models\InvoiceDetail;
 use App\Models\Payment;
 use App\Models\PaymentDetail;
 use App\Models\Customer;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class InvoiceController extends Controller
 {
@@ -52,7 +52,7 @@ class InvoiceController extends Controller
     if ($request->category_id == null) {
 
        $notification = array(
-        'message' => 'Sorry You do not select any item', 
+        'message' => 'Please select an item', 
         'alert-type' => 'error'
     );
     return redirect()->back()->with($notification);
@@ -61,7 +61,7 @@ class InvoiceController extends Controller
         if ($request->paid_amount > $request->estimated_amount) {
 
            $notification = array(
-        'message' => 'Sorry Paid Amount is Maximum the total price', 
+        'message' => 'Sorry Paid Amount exceeded the total price', 
         'alert-type' => 'error'
     );
     return redirect()->back()->with($notification);
@@ -186,7 +186,7 @@ class InvoiceController extends Controller
             if($product->quantity < $request->selling_qty[$key]){
 
         $notification = array(
-        'message' => 'Sorry you approve Maximum Value', 
+        'message' => 'Sorry you approved maximum value', 
         'alert-type' => 'error'
     );
     return redirect()->back()->with($notification); 
@@ -214,7 +214,7 @@ class InvoiceController extends Controller
         });
 
     $notification = array(
-        'message' => 'Invoice Approve Successfully', 
+        'message' => 'Invoice Approved Successfully', 
         'alert-type' => 'success'
     );
     return redirect()->route('invoice.pending.list')->with($notification);  

@@ -38,7 +38,7 @@
 
     <div class="page-title-right">
         <ol class="breadcrumb m-0">
-            <li class="breadcrumb-item"><a href="javascript: void(0);">JOFS</a></li>
+            <li class="breadcrumb-item"><a href="javascript: void(0);">{{ Auth::user()->username }}</a></li>
             <li class="breadcrumb-item active">Dashboard</li>
         </ol>
     </div>
@@ -49,12 +49,12 @@
 <!-- end page title -->
 
 <div class="row">
-<div class="col-xl-3 col-md-6">
+<div class="col-xl-4 col-md-6">
 <div class="card">
     <div class="card-body">
         <div class="d-flex">
             <div class="flex-grow-1">
-                <p class="text-truncate font-size-14 mb-2">Total Product</p>
+                <p class="text-truncate font-size-14 mb-2">Total Item</p>
                 <h4 class="mb-2">{{ $totalProduct }}</h4>
                 {{-- <p class="text-muted mb-0"><span class="text-success fw-bold font-size-12 me-2"><i class="ri-arrow-right-up-line me-1 align-middle"></i></span>from previous period</p> --}}
             </div>
@@ -67,30 +67,30 @@
     </div><!-- end cardbody -->
 </div><!-- end card -->
 </div><!-- end col -->
-<div class="col-xl-3 col-md-6">
+<div class="col-xl-4 col-md-6">
 <div class="card">
     <div class="card-body">
         <div class="d-flex">
             <div class="flex-grow-1">
-                <p class="text-truncate font-size-14 mb-2">Total Supplier</p>
+                <p class="text-truncate font-size-14 mb-2">Total Staff</p>
                 <h4 class="mb-2">{{ $totalSupplier }}</h4>
                 
             </div>
             <div class="avatar-sm">
                 <span class="avatar-title bg-light text-success rounded-3">
-                    <i class="mdi mdi-currency-usd font-size-24"></i>  
+                    <i class="ri-user-3-line font-size-24"></i>  
                 </span>
             </div>
         </div>                                              
     </div><!-- end cardbody -->
 </div><!-- end card -->
 </div><!-- end col -->
-<div class="col-xl-3 col-md-6">
+<div class="col-xl-4 col-md-6">
 <div class="card">
     <div class="card-body">
         <div class="d-flex">
             <div class="flex-grow-1">
-                <p class="text-truncate font-size-14 mb-2">Total Customers</p>
+                <p class="text-truncate font-size-14 mb-2">Total Requestors</p>
                 <h4 class="mb-2">{{ $totalCustomer }}</h4>
                 
             </div>
@@ -103,7 +103,7 @@
     </div><!-- end cardbody -->
 </div><!-- end card -->
 </div><!-- end col -->
-<div class="col-xl-3 col-md-6">
+{{-- <div class="col-xl-3 col-md-6">
 <div class="card">
     <div class="card-body">
         <div class="d-flex">
@@ -120,7 +120,7 @@
         </div>                                              
     </div><!-- end cardbody -->
 </div><!-- end card -->
-</div><!-- end col -->
+</div><!-- end col --> --}}
 </div><!-- end row -->
 
 <div class="row">
@@ -129,6 +129,8 @@
 
     @php
     $purchase = App\Models\Purchase::orderBy('id','DESC')->limit(5)->get();
+    // product
+        $products =  App\Models\Product::latest()->get();
     @endphp
 
     
@@ -144,47 +146,64 @@
          
         </div>
 
-        <h4 class="card-title mb-4">Latest Purchase</h4>
+        <h4 class="card-title mb-4">List of Items</h4>
 
         <div class="table-responsive">
             <table id="datatable" class="table table-bordered dt-responsive nowrap text-center" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                 <thead>
                 <tr>
                     <th>Sl</th>
-                    <th>Purhase No</th> 
-                    <th>Date </th>
-                    <th>Supplier</th>
+                    <th>Item name</th> 
+                    <th>Staff name </th>
+                    <th>Offices</th>
                     <th>Category</th> 
-                    <th>Qty</th> 
-                    <th>Product Name</th> 
-                    <th>Status</th>
+                    <th>Action</th>
                     
                 </thead>
 
 
                 <tbody>
                      
-                    @foreach($purchase as $key => $item)
-    <tr>
-        <td> {{ $key+1}} </td>
-        <td> {{ $item->purchase_no }} </td> 
-        <td> {{ date('d-m-Y',strtotime($item->date))  }} </td> 
-         <td> {{ $item['supplier']['name'] }} </td> 
-         <td> {{ $item['category']['name'] }} </td> 
-         <td> {{ $item->buying_qty }} </td> 
-         <td> {{ $item['product']['name'] }} </td> 
+                    @foreach($products as $key => $item)
+                <tr>
+                    <td> {{ $key+1}} </td>
+                    <td> {{ $item->name }} </td> 
+                    @if(isset($item['supplier']['name']))
 
-         <td> 
-            @if($item->status == '0')
-            <span class="btn btn-warning">Pending</span>
-            @elseif($item->status == '1')
-            <span class="btn btn-success">Approved</span>
-            @endif
-             </td> 
+                    <td> {{ $item['supplier']['name'] }} </td> 
 
+                    @else
+                    <td> N/A </td>
 
-       
-    </tr>
+                    @endif
+
+                    @if(isset($item['unit']['name']))
+
+                    
+                    <td> {{ $item['unit']['name'] }} </td> 
+
+                    @else
+                    <td> N/A </td>
+
+                    @endif
+
+                    @if(isset($item['category']['name']))
+
+                    <td> {{ $item['category']['name'] }} </td> 
+
+                    @else
+
+                    <td> N/A </td>
+
+                    @endif
+                    <td>
+<a href="{{ route('product.edit',$item->id) }}" class="btn btn-info sm" title="Edit Data">  <i class="fas fa-edit"></i> </a>
+
+<a href="{{ route('product.delete',$item->id) }}" class="btn btn-danger sm" title="Delete Data" id="delete">  <i class="fas fa-trash-alt"></i> </a>
+
+                    </td>
+                   
+                </tr>
                 @endforeach
                 
                 </tbody>

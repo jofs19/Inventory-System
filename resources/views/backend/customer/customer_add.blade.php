@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Add Customer Page </h4><br><br>
+            <h4 class="card-title">Add Requestors Page </h4><br><br>
             
   
 
@@ -18,7 +18,7 @@
                 @csrf
 
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Customer Name </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Requestors Name </label>
                 <div class="form-group col-sm-10">
                     <input name="name" class="form-control" type="text"    >
                 </div>
@@ -27,7 +27,7 @@
 
 
               <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Customer Mobile </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Requestors Mobile # </label>
                 <div class="form-group col-sm-10">
                     <input name="mobile_no" class="form-control" type="text"    >
                 </div>
@@ -36,7 +36,7 @@
 
 
   <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Customer Email </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Requestors Email </label>
                 <div class="form-group col-sm-10">
                     <input name="email" class="form-control" type="email"  >
                 </div>
@@ -45,7 +45,7 @@
 
 
   <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Customer Address </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Requestors Address </label>
                 <div class="form-group col-sm-10">
                     <input name="address" class="form-control" type="text"  >
                 </div>
@@ -53,7 +53,7 @@
             <!-- end row -->
 
               <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Customer Image </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Requestors Image </label>
                 <div class="form-group col-sm-10">
        <input name="customer_image" class="form-control" type="file"  id="image">
                 </div>

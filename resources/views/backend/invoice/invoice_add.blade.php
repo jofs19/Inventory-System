@@ -335,7 +335,7 @@
                 type: "GET",
                 data:{category_id:category_id},
                 success:function(data){
-                    var html = '<option value="">Select Category</option>';
+                    var html = '<option value="">Select Option</option>';
                     $.each(data,function(key,v){
                         html += '<option value=" '+v.id+' "> '+v.name+'</option>';
                     });

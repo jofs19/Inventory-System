@@ -9,7 +9,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0"> Customer Wise Report </h4>
+                                    <h4 class="mb-sm-0"> Requestors Wise Report </h4>
 
                                      
 
@@ -26,11 +26,11 @@
  
     <div class="row">
         <div class="col-md-12 text-center">
-            <strong> Customer Wise Credit Report </strong>
+            <strong> Requestors Wise Credit Report </strong>
             <input type="radio" name="customer_wise_report" value="customer_wise_credit" class="search_value"> &nbsp;&nbsp;
 
 
-            <strong> Customer Wise Paid Report </strong>
+            <strong> Requestors Wise Paid Report </strong>
             <input type="radio" name="customer_wise_report" value="customer_wise_paid" class="search_value">
 
 
@@ -43,9 +43,9 @@
 
             <div class="row">
                 <div class="col-sm-8 form-group">
-                    <label>Customer Name </label>
+                    <label>Requestors Name </label>
               <select name="customer_id" class="form-select select2"  >
-                <option value="">Select Customer</option>
+                <option value="">Select Requestors</option>
                 @foreach($customers as $cus)
                 <option value="{{ $cus->id }}">{{ $cus->name }}</option>
                @endforeach
@@ -69,9 +69,9 @@
 
             <div class="row">
                 <div class="col-sm-8 form-group">
-                    <label>Customer Name </label>
+                    <label>Requestors Name </label>
               <select name="customer_id" class="form-select select2"  >
-                <option value="">Select Customer</option>
+                <option value="">Select Requestors</option>
                 @foreach($customers as $cus)
                 <option value="{{ $cus->id }}">{{ $cus->name }}</option>
                @endforeach

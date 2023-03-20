@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('date')->nullable();
             $table->integer('updated_by')->nullable(); 
             $table->timestamps();
+            $table->foreign('invoice_id')->references('id')->on('invoices')->onDelete('cascade');
         });
     }
 

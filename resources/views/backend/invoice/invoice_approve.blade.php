@@ -31,9 +31,22 @@
         <tbody>
             <tr>
                 <td><p> Customer Info </p></td>
+                @if(isset($payment['customer']['name']))
                 <td><p> Name: <strong> {{ $payment['customer']['name']  }} </strong> </p></td>
+                @else
+                <td>N/A</td>
+                @endif
+                @if(isset($payment['customer']['mobile_no']))
                 <td><p> Mobile: <strong> {{ $payment['customer']['mobile_no']  }} </strong> </p></td>
-               <td><p> Email: <strong> {{ $payment['customer']['email']  }} </strong> </p></td>                
+                @else
+                <td>N/A</td>
+                @endif
+
+                @if(isset($payment['customer']['email'] ))
+               <td><p> Email: <strong> {{ $payment['customer']['email']  }} </strong> </p></td>     
+               @else
+               <td>N/A</td>        
+               @endif   
             </tr>
 
              <tr>
@@ -72,9 +85,23 @@
             <input type="hidden" name="selling_qty[{{$details->id}}]" value="{{ $details->selling_qty }}">
 
             <td class="text-center">{{ $key+1 }}</td>
+            @if(isset($details['category']['name']))
+
             <td class="text-center">{{ $details['category']['name'] }}</td>
+            @else
+            <td>N/A</td>
+            @endif
+
+            @if(isset($details['product']['name']))
             <td class="text-center">{{ $details['product']['name'] }}</td>
+            @else
+            <td>N/A</td>
+            @endif
+            @if(isset($details['product']['quantity']))
             <td class="text-center" style="background-color: #8B008B">{{ $details['product']['quantity'] }}</td>
+            @else
+            <td>N/A</td>
+            @endif
             <td class="text-center">{{ $details->selling_qty }}</td>
             <td class="text-center">{{ $details->unit_price }}</td>
             <td class="text-center">{{ $details->selling_price }}</td>

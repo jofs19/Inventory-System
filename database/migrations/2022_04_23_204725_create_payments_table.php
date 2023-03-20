@@ -23,6 +23,8 @@ return new class extends Migration
             $table->double('total_amount')->nullable();
             $table->double('discount_amount')->nullable();
             $table->timestamps();
+            $table->foreign('invoice_id')->references('id')->on('invoices')->onDelete('cascade');
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
         });
     }
  

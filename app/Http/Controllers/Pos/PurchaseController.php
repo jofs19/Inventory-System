@@ -9,7 +9,7 @@ use App\Models\Supplier;
 use App\Models\Product;
 use App\Models\Unit;
 use App\Models\Category;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
 
 class PurchaseController extends Controller
@@ -37,7 +37,7 @@ class PurchaseController extends Controller
     if ($request->category_id == null) {
 
        $notification = array(
-        'message' => 'Sorry you do not select any item', 
+        'message' => 'Please select an item', 
         'alert-type' => 'error'
     );
     return redirect()->back( )->with($notification);
@@ -76,7 +76,7 @@ class PurchaseController extends Controller
         Purchase::findOrFail($id)->delete();
 
          $notification = array(
-        'message' => 'Purchase Iteam Deleted Successfully', 
+        'message' => 'Purchase Item Deleted Successfully', 
         'alert-type' => 'success'
     );
     return redirect()->back()->with($notification); 

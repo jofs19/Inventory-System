@@ -9,12 +9,12 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0">Customer Invoice</h4>
+                                    <h4 class="mb-sm-0">Requestors Invoice</h4>
 
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);"> </a></li>
-                                            <li class="breadcrumb-item active">Customer Invoice</li>
+                                            <li class="breadcrumb-item active">Requestors Invoice</li>
                                         </ol>
                                     </div>
 
@@ -35,16 +35,16 @@
         <div class="col-12">
             <div>
                 <div class="p-2">
-     <h3 class="font-size-16"><strong>Customer Invoice ( Invoice No: #{{ $payment['invoice']['invoice_no'] }} ) </strong></h3>
+     <h3 class="font-size-16"><strong>Requestors Invoice ( Invoice No: #{{ $payment['invoice']['invoice_no'] }} ) </strong></h3>
                 </div>
                 <div class="">
 <div class="table-responsive">
     <table class="table">
         <thead>
         <tr>
-            <td><strong>Customer Name </strong></td>
-            <td class="text-center"><strong>Customer Mobile</strong></td>
-            <td class="text-center"><strong>Address</strong>
+            <td><strong>Requestors Name </strong></td>
+            <td class="text-center"><strong>Requestors Mobile #</strong></td>
+            <td class="text-center"><strong>Requestors Address</strong>
             </td>
              
             
@@ -143,7 +143,7 @@ $invoice_details = App\Models\InvoiceDetail::where('invoice_id',$payment->invoic
                 <td class="thick-line"></td>
                 <td class="thick-line text-center">
                     <strong>Subtotal</strong></td>
-                <td class="thick-line text-end">${{ $total_sum }}</td>
+                <td class="thick-line text-end">₱{{ $total_sum }}</td>
             </tr>
             <tr>
                 <td class="no-line"></td>
@@ -153,7 +153,7 @@ $invoice_details = App\Models\InvoiceDetail::where('invoice_id',$payment->invoic
                 <td class="no-line"></td>
                 <td class="no-line text-center">
                     <strong>Discount Amount</strong></td>
-                <td class="no-line text-end">${{ $payment->discount_amount }}</td>
+                <td class="no-line text-end">₱{{ $payment->discount_amount }}</td>
             </tr>
              <tr>
                 <td class="no-line"></td>
@@ -163,7 +163,7 @@ $invoice_details = App\Models\InvoiceDetail::where('invoice_id',$payment->invoic
                 <td class="no-line"></td>
                 <td class="no-line text-center">
                     <strong>Paid Amount</strong></td>
-                <td class="no-line text-end">${{ $payment->paid_amount }}</td>
+                <td class="no-line text-end">₱{{ $payment->paid_amount }}</td>
             </tr>
 
              <tr>
@@ -175,7 +175,7 @@ $invoice_details = App\Models\InvoiceDetail::where('invoice_id',$payment->invoic
                 <td class="no-line text-center">
                     <strong>Due Amount</strong></td>
                     <input type="hidden" name="new_paid_amount" value="{{$payment->due_amount}}">
-                <td class="no-line text-end">${{ $payment->due_amount }}</td>
+                <td class="no-line text-end">₱{{ $payment->due_amount }}</td>
             </tr>
             <tr>
                 <td class="no-line"></td>

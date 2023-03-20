@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Edit Unit Page </h4><br><br>
+            <h4 class="card-title">Edit Offices Page </h4><br><br>
             
   
 
@@ -19,7 +19,7 @@
 
             <input type="hidden" name="id" value="{{ $unit->id }}">
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">Unit Name </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Offices Name </label>
                 <div class="form-group col-sm-10">
                     <input name="name" value="{{ $unit->name }}" class="form-control" type="text"    >
                 </div>
@@ -27,7 +27,7 @@
             <!-- end row --> 
 
         
-<input type="submit" class="btn btn-info waves-effect waves-light" value="Update Unit">
+<input type="submit" class="btn btn-info waves-effect waves-light" value="Update Office">
             </form>
              
            

@@ -91,11 +91,11 @@
 		<div class="controls">
 			<fieldset>
 				<input type="checkbox" id="checkbox_2" name="m_suppliers" value="1" >
-				<label for="checkbox_2">Manage Suppliers</label>
+				<label for="checkbox_2">Manage Staffs</label>
 			</fieldset>
 			<fieldset>
 				<input type="checkbox" id="checkbox_3" name="m_customers" value="1" >
-				<label for="checkbox_3">Manage Customers</label>
+				<label for="checkbox_3">Manage Employees</label>
 			</fieldset>
 
 			<fieldset>
@@ -122,10 +122,10 @@
 				<label for="checkbox_8">Manage Products</label>
 			</fieldset>
 
-			<fieldset>
+			{{-- <fieldset>
 				<input type="checkbox" id="checkbox_9" name="m_purchases" value="1" >
 				<label for="checkbox_9">Manage Purchases</label>
-			</fieldset>
+			</fieldset> --}}
 
 
 		</div>
@@ -139,10 +139,10 @@
 	<div class="form-group">
 
 		<div class="controls">
-			<fieldset>
+			{{-- <fieldset>
 				<input type="checkbox" id="checkbox_12" name="m_invoices" value="1" >
 				<label for="checkbox_12">Manage Invoices</label>
-			</fieldset>
+			</fieldset> --}}
 			<fieldset>
 				<input type="checkbox" id="checkbox_13" name="m_stocks" value="1" >
 				<label for="checkbox_13">Manage Stocks</label>

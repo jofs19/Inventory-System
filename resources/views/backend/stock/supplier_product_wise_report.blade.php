@@ -9,7 +9,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0">Supplier and Product Wise Report </h4>
+                                    <h4 class="mb-sm-0">Staff and Product Wise Report </h4>
 
                                      
 
@@ -26,7 +26,7 @@
  
     <div class="row">
         <div class="col-md-12 text-center">
-            <strong> Supplier Wise Report </strong>
+            <strong> Staff Wise Report </strong>
             <input type="radio" name="supplier_product_wise" value="supplier_wise" class="search_value"> &nbsp;&nbsp;
 
 
@@ -43,9 +43,9 @@
 
             <div class="row">
                 <div class="col-sm-8 form-group">
-                    <label>Supplier Name </label>
+                    <label>Staff Name </label>
               <select name="supplier_id" class="form-select select2"  >
-                <option value="">Select Supplier</option>
+                <option value="">Select Staff</option>
                 @foreach($supppliers as $supp)
                 <option value="{{ $supp->id }}">{{ $supp->name }}</option>
                @endforeach
@@ -127,7 +127,7 @@
                 type: "GET",
                 data:{category_id:category_id},
                 success:function(data){
-                    var html = '<option value="">Select Category</option>';
+                    var html = '<option value="">Select Option</option>';
                     $.each(data,function(key,v){
                         html += '<option value=" '+v.id+' "> '+v.name+'</option>';
                     });

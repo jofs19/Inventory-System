@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Pos;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Customer;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
-use Image; 
+use Intervention\Image\Facades\Image;
 use App\Models\Payment;
 use App\Models\PaymentDetail;
 
@@ -84,7 +84,7 @@ class CustomerController extends Controller
         ]);
 
          $notification = array(
-            'message' => 'Customer Updated with Image Successfully', 
+            'message' => 'Customer Updated Successfully', 
             'alert-type' => 'success'
         );
 
@@ -103,7 +103,7 @@ class CustomerController extends Controller
         ]);
 
          $notification = array(
-            'message' => 'Customer Updated without Image Successfully', 
+            'message' => 'Customer Updated Successfully', 
             'alert-type' => 'success'
         );
 

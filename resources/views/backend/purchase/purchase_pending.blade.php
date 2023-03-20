@@ -9,7 +9,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0">Purchase All</h4>
+                                    <h4 class="mb-sm-0">All Purchases </h4>
 
                                      
 
@@ -51,10 +51,29 @@
                 <td> {{ $key+1}} </td>
                 <td> {{ $item->purchase_no }} </td> 
                 <td> {{ date('d-m-Y',strtotime($item->date))  }} </td> 
+                @if(isset($item['supplier']['name']))
+
                  <td> {{ $item['supplier']['name'] }} </td> 
+
+                @else 
+                <td> N/A </td>
+
+                @endif
+
+                @if(isset($item['category']['name']))
                  <td> {{ $item['category']['name'] }} </td> 
+                @else 
+                <td> N/A </td>
+                @endif
                  <td> {{ $item->buying_qty }} </td> 
+
+                 @if(isset($item['product']['name']))
                  <td> {{ $item['product']['name'] }} </td> 
+
+                 @else
+                 <td>N/A</td>
+
+                 @endif
 
                  <td> 
                     @if($item->status == '0')
@@ -66,7 +85,7 @@
 
                 <td> 
 @if($item->status == '0')
-<a href="{{ route('purchase.approve',$item->id) }} " class="btn btn-danger sm" title="Approved" id="ApproveBtn">  <i class="fas fa-check-circle"></i> </a>
+<a href="{{ route('purchase.approve',$item->id) }}" class="btn btn-danger sm" title="Approve purchase" id="ApproveBtn">  <i class="fas fa-check-circle"></i> </a>
 @endif
                 </td>
                

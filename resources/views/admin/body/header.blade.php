@@ -62,20 +62,13 @@
             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
             
-            @if ($id == 2)
 
             <img class="rounded-circle header-profile-user" src="{{ (!empty($adminData->profile_image))? url('upload/admin_images/'.$adminData->profile_image):url('upload/no_image.jpg') }}"
             alt="Header Avatar">
 
 
 
-            @else
 
-            <img class="rounded-circle header-profile-user" src="{{ (!empty($adminData->profile_image))? url($adminData->profile_image):url('upload/no_image.jpg') }}"
-            alt="Header Avatar">
-                
-                
-            @endif
             
 
 
