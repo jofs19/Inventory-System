@@ -80,12 +80,12 @@
         <thead>
         <tr>
             <td><strong>Sl </strong></td>
-            <td class="text-center"><strong>Supplier Name </strong></td>
+            <td class="text-center"><strong>Staff Name </strong></td>
             <td class="text-center"><strong>Unit  </strong>
             </td>
             <td class="text-center"><strong>Category</strong>
             </td>
-            <td class="text-center"><strong>Product Name</strong>
+            <td class="text-center"><strong>Item Name</strong>
             </td>
             <td class="text-center"><strong>In Qty  </strong>
             </td>

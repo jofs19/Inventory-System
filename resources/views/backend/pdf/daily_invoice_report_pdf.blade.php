@@ -88,7 +88,7 @@
         <thead>
         <tr>
             <td><strong>Sl </strong></td>
-            <td class="text-center"><strong>Customer Name </strong></td>
+            <td class="text-center"><strong>Requestor Name </strong></td>
             <td class="text-center"><strong>Invoice No  </strong>
             </td>
             <td class="text-center"><strong>Date</strong>

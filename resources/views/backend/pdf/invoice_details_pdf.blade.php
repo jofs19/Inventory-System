@@ -8,12 +8,12 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0"> Customer Payment Report </h4>
+                                    <h4 class="mb-sm-0"> Requestor Payment Report </h4>
 
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);"> </a></li>
-                                            <li class="breadcrumb-item active">Customer Payment Report</li>
+                                            <li class="breadcrumb-item active">Requestor Payment Report</li>
                                         </ol>
                                     </div>
 
@@ -62,15 +62,15 @@
         <div class="col-12">
             <div>
                 <div class="p-2">
-                    <h3 class="font-size-16"><strong>Customer Invoice</strong></h3>
+                    <h3 class="font-size-16"><strong>Requestor Invoice</strong></h3>
                 </div>
                 <div class="">
 <div class="table-responsive">
     <table class="table">
         <thead>
         <tr>
-            <td><strong>Customer Name </strong></td>
-            <td class="text-center"><strong>Customer Mobile</strong></td>
+            <td><strong>Requestor Name </strong></td>
+            <td class="text-center"><strong>Requestor Mobile</strong></td>
             <td class="text-center"><strong>Address</strong>
             </td>
              
@@ -116,7 +116,7 @@
         <tr>
             <td><strong>Sl </strong></td>
             <td class="text-center"><strong>Category</strong></td>
-            <td class="text-center"><strong>Product Name</strong>
+            <td class="text-center"><strong>Item Name</strong>
             </td>
             <td class="text-center"><strong>Current Stock</strong>
             </td>

@@ -30,7 +30,7 @@
      <table class="table table-dark" width="100%">
         <tbody>
             <tr>
-                <td><p> Customer Info </p></td>
+                <td><p> Requestor Info </p></td>
                 @if(isset($payment['customer']['name']))
                 <td><p> Name: <strong> {{ $payment['customer']['name']  }} </strong> </p></td>
                 @else
@@ -65,7 +65,7 @@
                 <tr>
                     <th class="text-center">Sl</th>
                     <th class="text-center">Category</th>
-                    <th class="text-center">Product Name</th>
+                    <th class="text-center">Item Name</th>
                     <th class="text-center" style="background-color: #8B008B">Current Stock</th>
                     <th class="text-center">Quantity</th>
                     <th class="text-center">Unit Price </th>

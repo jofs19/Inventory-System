@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+use Illuminate\Http\Exceptions\ThrottleRequestsException;
 
 class Handler extends ExceptionHandler
 {
@@ -38,4 +39,15 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    public function render($request, Throwable $exception)
+{
+    if ($exception instanceof ThrottleRequestsException) {
+        return response()->json(['error' => 'Too many login attempts. Please try again in a few minutes.'], 429);
+    }
+
+    return parent::render($request, $exception);
+}
+
+
 }

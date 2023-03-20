@@ -30,7 +30,7 @@
 
         <div class="col-md-4">
             <div class="md-3">
-                <label for="example-text-input" class="form-label">Supplier Name </label>
+                <label for="example-text-input" class="form-label">Staff Name </label>
                 <select id="supplier_id" name="supplier_id" class="form-select select2" aria-label="Default select example">
                 <option selected="">Open this select menu</option>
                 @foreach($supplier as $supp)
@@ -54,7 +54,7 @@
 
          <div class="col-md-4">
             <div class="md-3">
-                <label for="example-text-input" class="form-label">Product Name </label>
+                <label for="example-text-input" class="form-label">Item Name </label>
                 <select name="product_id" id="product_id" class="form-select select2" aria-label="Default select example">
                 <option selected="">Open this select menu</option>
                
@@ -88,7 +88,7 @@
                 <thead>
                     <tr>
                         <th>Category</th>
-                        <th>Product Name </th>
+                        <th>Item Name </th>
                         <th>PSC/KG</th>
                         <th>Unit Price </th>
                         <th>Description</th>
@@ -209,7 +209,7 @@
                  }
 
                   if(supplier_id == ''){
-                $.notify("Supplier is Required" ,  {globalPosition: 'top right', className:'error' });
+                $.notify("Staff is Required" ,  {globalPosition: 'top right', className:'error' });
                 return false;
                  }
                   if(category_id == ''){
@@ -217,7 +217,7 @@
                 return false;
                  }
                   if(product_id == ''){
-                $.notify("Product Field is Required" ,  {globalPosition: 'top right', className:'error' });
+                $.notify("Item Field is Required" ,  {globalPosition: 'top right', className:'error' });
                 return false;
                  }
 

@@ -8,12 +8,12 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0">Product Wise Stock Report</h4>
+                                    <h4 class="mb-sm-0">Item Wise Stock Report</h4>
 
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);"> </a></li>
-                                            <li class="breadcrumb-item active">Product Wise Stock Report</li>
+                                            <li class="breadcrumb-item active">Item Wise Stock Report</li>
                                         </ol>
                                     </div>
 
@@ -88,12 +88,12 @@
         <thead>
         <tr>
           
-            <td class="text-center"><strong>Supplier Name </strong></td>
+            <td class="text-center"><strong>Staff Name </strong></td>
             <td class="text-center"><strong>Unit  </strong>
             </td>
             <td class="text-center"><strong>Category</strong>
             </td>
-            <td class="text-center"><strong>Product Name</strong>
+            <td class="text-center"><strong>Item Name</strong>
             </td>
             <td class="text-center"><strong>Stock  </strong>
             </td>

@@ -8,12 +8,12 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0">Customer Wise Credit Report</h4>
+                                    <h4 class="mb-sm-0">Requestor Wise Credit Report</h4>
 
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);"> </a></li>
-                                            <li class="breadcrumb-item active">Customer Wise Credit Report</li>
+                                            <li class="breadcrumb-item active">Requestor Wise Credit Report</li>
                                         </ol>
                                     </div>
 
@@ -69,7 +69,7 @@
         <thead>
         <tr>
             <td><strong>Sl </strong></td>
-            <td class="text-center"><strong>Customer Name </strong></td>
+            <td class="text-center"><strong>Requestor Name </strong></td>
             <td class="text-center"><strong>Invoice No  </strong>
             </td>
             <td class="text-center"><strong>Date</strong>

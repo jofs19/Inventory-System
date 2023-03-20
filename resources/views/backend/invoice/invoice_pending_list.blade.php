@@ -32,7 +32,7 @@
                         <thead>
                         <tr>
                             <th>Sl</th>
-                            <th>Customer Name</th> 
+                            <th>Requestor Name</th> 
                             <th>Invoice No </th>
                             <th>Date </th>
                             <th>Desctipion</th>  

@@ -58,7 +58,7 @@
 
 
         
-<input type="submit" class="btn btn-info waves-effect waves-light" value="Update Supplier">
+<input type="submit" class="btn btn-info waves-effect waves-light" value="Update Staff">
             </form>
              
            

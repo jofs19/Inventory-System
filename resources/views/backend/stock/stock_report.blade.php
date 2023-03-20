@@ -32,10 +32,10 @@
                         <thead>
                         <tr>
                             <th>Sl</th>
-                            <th>Supplier Name </th>
+                            <th>Staff Name </th>
                             <th>Unit</th>
                             <th>Category</th> 
-                            <th>Product Name</th> 
+                            <th>Item Name</th> 
                             <th>In Qty</th> 
                             <th>Out Qty </th>  
                             <th>Stock </th>

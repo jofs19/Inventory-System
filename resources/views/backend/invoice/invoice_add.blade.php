@@ -46,7 +46,7 @@
 
          <div class="col-md-3">
             <div class="md-3">
-                <label for="example-text-input" class="form-label">Product Name </label>
+                <label for="example-text-input" class="form-label">Item Name </label>
                 <select name="product_id" id="product_id" class="form-select select2" aria-label="Default select example">
                 <option selected="">Open this select menu</option>
                
@@ -68,7 +68,7 @@
         <label for="example-text-input" class="form-label" style="margin-top:43px;">  </label>
         
 
-        <i class="btn btn-secondary btn-rounded waves-effect waves-light fas fa-plus-circle addeventmore"> Add More</i>
+        <i class="btn btn-secondary btn-rounded waves-effect waves-light fas fa-plus-circle addeventmore"> Enter details</i>
     </div>
 </div>
 
@@ -81,14 +81,14 @@
         </div> <!-- End card-body -->
 <!--  ---------------------------------- -->
 
-        <div class="card-body">
+        <div class="card-body main-section">
         <form method="post" action="{{ route('invoice.store') }}">
             @csrf
             <table class="table-sm table-bordered" width="100%" style="border-color: #ddd;">
                 <thead>
                     <tr>
                         <th>Category</th>
-                        <th>Product Name </th>
+                        <th>Item Name </th>
                         <th width="7%">PSC/KG</th>
                         <th width="10%">Unit Price </th> 
                         <th width="15%">Total Price</th>
@@ -143,36 +143,36 @@
 
 
             <div class="form-group col-md-9">
-                <label> Customer Name  </label>
+                <label> Requestor Name  </label>
                     <select name="customer_id" id="customer_id" class="form-select">
-                        <option value="">Select Customer </option>
+                        <option value="">Select Requestor </option>
                         @foreach($costomer as $cust)
                         <option value="{{ $cust->id }}">{{ $cust->name }} - {{ $cust->mobile_no }}</option>
                         @endforeach
-                         <option value="0">New Customer </option>
+                         <option value="0">New Requestor </option>
                     </select>
             </div> 
             </div> <!-- // end row --> <br>
 
-<!-- Hide Add Customer Form -->
+<!-- Hide Add Requestor Form -->
 <div class="row new_customer" style="display:none">
     <div class="form-group col-md-4">
-        <input type="text" name="name" id="name" class="form-control" placeholder="Write Customer Name">
+        <input type="text" name="name" id="name" class="form-control" placeholder="Write Requestor Name">
     </div>
 
     <div class="form-group col-md-4">
-        <input type="text" name="mobile_no" id="mobile_no" class="form-control" placeholder="Write Customer Mobile No">
+        <input type="text" name="mobile_no" id="mobile_no" class="form-control" placeholder="Write Requestor Mobile No">
     </div>
 
     <div class="form-group col-md-4">
-        <input type="email" name="email" id="email" class="form-control" placeholder="Write Customer Email">
+        <input type="email" name="email" id="email" class="form-control" placeholder="Write Requestor Email">
     </div>
 </div>
-<!-- End Hide Add Customer Form -->
+<!-- End Hide Add Requestor Form -->
 
  <br>
             <div class="form-group">
-                <button type="submit" class="btn btn-info" id="storeButton">  Store Invoice </button>
+                <button type="submit" class="btn btn-info" id="storeButton">  Add Invoice </button>
                 
             </div>
             
@@ -264,7 +264,7 @@
                 return false;
                  }
                   if(product_id == ''){
-                $.notify("Product Field is Required" ,  {globalPosition: 'top right', className:'error' });
+                $.notify("Item Field is Required" ,  {globalPosition: 'top right', className:'error' });
                 return false;
                  }
 
@@ -385,6 +385,18 @@
     });
 
 
+</script>
+
+<script>
+// if addeventmore is clicked change text
+$('.main-section').hide();
+
+$(document).on('click', '.addeventmore', function(){
+    $('.addeventmore').text('Add More');
+    // visible main section
+    $('.main-section').show();
+});
+    
 </script>
 
  

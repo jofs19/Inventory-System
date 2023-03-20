@@ -43,14 +43,21 @@ class LoginRequest extends FormRequest
      */
     public function authenticate()
     {
+        // notifiy user if account is locked
         $this->ensureIsNotRateLimited();
 
         if (! Auth::attempt($this->only('username', 'password'), $this->boolean('remember'))) {
-            RateLimiter::hit($this->throttleKey());
+            RateLimiter::hit($this->throttleKey(), 60);
+
 
             throw ValidationException::withMessages([
-                'username' => trans('auth.failed'),
+                'username' => __('auth.failed'),
+                
+
             ]);
+            
+
+            
         }
 
         RateLimiter::clear($this->throttleKey());
@@ -65,7 +72,7 @@ class LoginRequest extends FormRequest
      */
     public function ensureIsNotRateLimited()
     {
-        if (! RateLimiter::tooManyAttempts($this->throttleKey(), 2)) {
+        if (! RateLimiter::tooManyAttempts($this->throttleKey(), 3)) {
             return;
         }
 
@@ -74,11 +81,12 @@ class LoginRequest extends FormRequest
         $seconds = RateLimiter::availableIn($this->throttleKey());
 
         throw ValidationException::withMessages([
+            
             'email' => trans('auth.throttle', [
                 'seconds' => $seconds,
                 'minutes' => ceil($seconds / 60),
             ]),
-        ]);
+        ])->status(429);
     }
 
     /**

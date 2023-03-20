@@ -34,10 +34,10 @@
                             <th>Sl</th>
                             <th>Purhase No</th> 
                             <th>Date </th>
-                            <th>Supplier</th>
+                            <th>Staff</th>
                             <th>Category</th> 
                             <th>Qty</th> 
-                            <th>Product Name</th> 
+                            <th>Item Name</th> 
                             <th>Status</th>
                             <th>Action</th>
                             

@@ -9,7 +9,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0">Staff and Product Wise Report </h4>
+                                    <h4 class="mb-sm-0">Staff and Item Wise Report </h4>
 
                                      
 
@@ -30,14 +30,14 @@
             <input type="radio" name="supplier_product_wise" value="supplier_wise" class="search_value"> &nbsp;&nbsp;
 
 
-            <strong> Product Wise Report </strong>
+            <strong> Item Wise Report </strong>
             <input type="radio" name="supplier_product_wise" value="product_wise" class="search_value">
 
 
         </div>        
     </div> <!-- // end row  -->
 
-<!--  /// Supplier Wise  -->
+<!--  /// Staff Wise  -->
     <div class="show_supplier" style="display:none">
         <form method="GET" action="{{ route('supplier.wise.pdf') }}" id="myForm" target="_blank" >
 
@@ -61,9 +61,9 @@
         </form>
         
     </div>
-<!--  /// End Supplier Wise  -->
+<!--  /// End Staff Wise  -->
 
-<!--  /// Product Wise  -->
+<!--  /// Item Wise  -->
  <div class="show_product" style="display:none; ">
         <form method="GET" action="{{ route('product.wise.pdf') }}" id="myForm" target="_blank" >
 
@@ -84,7 +84,7 @@
 
          <div class="col-md-4">
             <div class="md-3">
-                <label for="example-text-input" class="form-label">Product Name </label>
+                <label for="example-text-input" class="form-label">Item Name </label>
                 <select name="product_id" id="product_id" class="form-select select2" aria-label="Default select example">
                 <option selected="">Open this select menu</option>
                
@@ -101,7 +101,7 @@
         </form>
         
     </div>
-<!--  /// End Product Wise  -->
+<!--  /// End Item Wise  -->
 
 
 
@@ -178,7 +178,7 @@
             },
             messages :{
                 supplier_id: {
-                    required : 'Please Select Supplier ',
+                    required : 'Please Select Staff ',
                 },
                 
             },

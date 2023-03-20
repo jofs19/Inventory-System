@@ -78,7 +78,7 @@
 <!-- end row -->
  
         
-<input type="submit" class="btn btn-info waves-effect waves-light" value="Update Product">
+<input type="submit" class="btn btn-info waves-effect waves-light" value="Update Item">
             </form>
              
            
@@ -112,10 +112,10 @@
             },
             messages :{
                 name: {
-                    required : 'Please Enter Your Product Name',
+                    required : 'Please Enter Your Item Name',
                 },
                 supplier_id: {
-                    required : 'Please Select One Supplier',
+                    required : 'Please Select One Staff',
                 },
                 unit_id: {
                     required : 'Please Select One Unit',

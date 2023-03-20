@@ -17,6 +17,10 @@ use App\Http\Controllers\AdminUserController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::middleware('throttle:3,1')->post('/login', [\Laravel\Fortify\Http\Controllers\AuthenticatedSessionController::class, 'store'])
+    ->middleware(['guest'])
+    ->name('login');
  
 
 Route::controller(DemoController::class)->group(function () {
